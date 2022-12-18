@@ -1,0 +1,14 @@
+# Install the Solana CLI
+$ npm install -g @solana/cli
+
+# Create a new account to hold your NFTs
+$ solana-keygen new --no-passphrase
+
+# Deploy the NFT contract to the Solana network
+$ solana-deploy-contract nft.sol --save-path nft.json
+
+# Create a new NFT
+$ solana-cli call <nft-contract-address> create '{"id":1,"data":"Hello, NFT!"}' --from <your-account-public-key>
+
+# Display the NFT data
+$ solana-cli call <nft-contract-address> get 1
